@@ -85,7 +85,7 @@ $link->close();
                 <div class="col-md-8">
                     <div class="play-content">
                         <h1>Select a level</h1>
-                        <div class="">
+                        
                     </div>
                 </div>
                 <div class="col-md-2"></div>
