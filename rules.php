@@ -288,7 +288,7 @@
                                     aria-labelledby="faq-heading-five" data-bs-parent="#faq-accordion">
                                     <div class="accordion-body">
                                         <p>
-                                            A participant can directly login with their discord account <a href="/crypt22/register.php">here</a>.
+                                            A participant can directly login with their discord account <a href="login.php">here</a>.
                                         </p>
                                     </div>
                                 </div>

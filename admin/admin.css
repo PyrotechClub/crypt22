@@ -1,0 +1,121 @@
+
+/* admin */
+
+.admin-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
+    padding: 20px;
+}
+
+.admin-box p {
+    font-size: 1.1rem;
+    color: #fff;
+    font-family: 'cabin', sans-serif;
+    letter-spacing: 1px;
+}
+
+.admin-box {
+    width: 100%;
+    padding: 50px;
+    height: auto;
+}
+
+.admin-content {
+    display: table;
+}
+
+.admin-content .col-md-4, .admin-content .col-md-6 {
+    display: table-cell;
+    padding: 0px 30px;
+}
+
+.admin-home-img {
+    height: auto;
+    width: 100%;
+}
+
+.admin-box::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-box p span {
+    color: #BF0B3B;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    margin: 0px 0px 20px 20px;
+    height: 7em;
+    width: 7em;
+}
+
+.admin-box h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'poppins', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.admin-box.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.btn-danger {
+    transition: 0.25s ease-in-out !important;
+    margin-right: 5px;
+    font-family: 'cabin', sans-serif !important;
+    font-size: 1.1rem !important;
+    background-color: #BF0B3B !important;
+}
+
+.btn-danger:hover {
+    box-shadow: 0px 3px 10px #BF0B3B91;
+}
+
+.admin-box form {
+    text-align: center;
+}
+
+.admin-box input[type=text] {
+    width: 40%;
+    height: 3em;
+    border: 2px solid transparent;
+    border-bottom-color: #BF0B3B;
+    background-color: transparent;
+    padding: 0px 10px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'cabin', sans-serif;
+    letter-spacing: 1px;
+}
+
+.timer p {
+    margin-bottom: 0px !important;
+}
+
+.admin-hr {
+    width: 30%;
+    border: 1px solid #BF0B3B;
+    margin: 1rem auto;
+    opacity: 1;
+    float: left;
+}
+
+.admin-table td, th {
+    padding: 15px !important;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'cabin', sans-serif;
+    letter-spacing: 1px;
+}

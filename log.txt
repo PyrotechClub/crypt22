@@ -142,3 +142,15 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\crypt22\play.php on line 22
+[21-Jul-2022 20:30:40 Europe/Berlin] PHP Warning:  Undefined variable $avatar_url in C:\xampp\htdocs\crypt22\admin.php on line 73
+[21-Jul-2022 20:30:40 Europe/Berlin] PHP Warning:  Undefined variable $name in C:\xampp\htdocs\crypt22\admin.php on line 74
+[21-Jul-2022 20:30:40 Europe/Berlin] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\crypt22\admin.php on line 75
+[21-Jul-2022 20:30:40 Europe/Berlin] PHP Warning:  Undefined variable $points in C:\xampp\htdocs\crypt22\admin.php on line 76
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $hintca in C:\xampp\htdocs\crypt22\admin.php on line 77
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $hintca in C:\xampp\htdocs\crypt22\admin.php on line 80
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $sides in C:\xampp\htdocs\crypt22\admin.php on line 83
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $hintca in C:\xampp\htdocs\crypt22\admin.php on line 103
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $hintca in C:\xampp\htdocs\crypt22\admin.php on line 106
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $points in C:\xampp\htdocs\crypt22\admin.php on line 106
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $hintca in C:\xampp\htdocs\crypt22\admin.php on line 115
+[21-Jul-2022 20:30:41 Europe/Berlin] PHP Warning:  Undefined variable $points in C:\xampp\htdocs\crypt22\admin.php on line 115
