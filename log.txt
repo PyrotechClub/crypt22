@@ -1,0 +1,144 @@
+[18-Jul-2022 17:16:52 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\crypt22\hint.php on line 4
+[18-Jul-2022 17:16:52 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\hint.php:9
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\hint.php(9): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\hint.php on line 9
+[18-Jul-2022 17:18:18 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\crypt22\hint.php on line 10
+[20-Jul-2022 19:56:19 Europe/Berlin] PHP Warning:  Undefined array key "access_token" in C:\xampp\htdocs\crypt22\process-oauth.php on line 55
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\crypt22\process-oauth.php on line 75
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\crypt22\process-oauth.php on line 76
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "avatar" in C:\xampp\htdocs\crypt22\process-oauth.php on line 77
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\crypt22\process-oauth.php on line 78
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\crypt22\process-oauth.php on line 88
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\crypt22\process-oauth.php on line 102
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "username" in C:\xampp\htdocs\crypt22\process-oauth.php on line 103
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\crypt22\process-oauth.php on line 104
+[20-Jul-2022 19:56:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'discord_id' cannot be null in C:\xampp\htdocs\crypt22\process-oauth.php:108
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\process-oauth.php(108): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\process-oauth.php on line 108
+[20-Jul-2022 19:56:28 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:56:47 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:57:45 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:57:45 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:57:47 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:57:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:00 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3 in C:\xampp\htdocs\crypt22\dashboard.php:15
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(15): mysqli_query(Object(mysqli), 'SELECT hintca \r...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 15
+[20-Jul-2022 19:59:01 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3 in C:\xampp\htdocs\crypt22\dashboard.php:15
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(15): mysqli_query(Object(mysqli), 'SELECT hintca \r...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 15
+[20-Jul-2022 19:59:13 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3 in C:\xampp\htdocs\crypt22\dashboard.php:15
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(15): mysqli_query(Object(mysqli), 'SELECT hintca \r...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 15
+[20-Jul-2022 19:59:17 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:31 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:36 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:43 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:46 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:49 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:49 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:50 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:53 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[20-Jul-2022 19:59:59 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\crypt22\dashboard.php:13
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\dashboard.php(13): mysqli_query(Object(mysqli), 'SELECT hintca F...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\dashboard.php on line 13
+[21-Jul-2022 18:06:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::exexute() in C:\xampp\htdocs\crypt22\play.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 14
+[21-Jul-2022 18:06:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::exexute() in C:\xampp\htdocs\crypt22\play.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 14
+[21-Jul-2022 18:08:28 Europe/Berlin] PHP Warning:  Undefined variable $stmt in C:\xampp\htdocs\crypt22\play.php on line 22
+[21-Jul-2022 18:08:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\xampp\htdocs\crypt22\play.php:22
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 22
+[21-Jul-2022 18:08:36 Europe/Berlin] PHP Warning:  Undefined variable $stmt in C:\xampp\htdocs\crypt22\play.php on line 22
+[21-Jul-2022 18:08:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\xampp\htdocs\crypt22\play.php:22
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 22
+[21-Jul-2022 18:08:39 Europe/Berlin] PHP Warning:  Undefined variable $stmt in C:\xampp\htdocs\crypt22\play.php on line 22
+[21-Jul-2022 18:08:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\xampp\htdocs\crypt22\play.php:22
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 22
