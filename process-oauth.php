@@ -29,8 +29,6 @@ $payload = [
     'scope'=>'email',
 ];
 
-print_r($payload);
-
 $payload_string = http_build_query($payload);
 $discord_token_url = "https://discord.com/api/oauth2/token";
 
@@ -45,7 +43,6 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 $result = curl_exec($ch);
-echo $result;
 
 if(!$result) {
     echo curl_error($ch);
@@ -80,8 +77,6 @@ $_SESSION['userData'] = [
 
 $register = $logged = false;
 
-print_r($result);
-
 $stmt = $link->prepare("SELECT id FROM users WHERE discord_id = ?");
 $stmt->bind_param("i", $param_discord_id);
 
@@ -90,11 +85,10 @@ $param_discord_id = $result['id'];
 $stmt->execute();
 $stmt->store_result();
 
-print_r($stmt);
 if(mysqli_stmt_num_rows($stmt) != 0){
     $logged = true;
     $register = false;
-    print_r("Logged in");
+    echo "Logged in <br> You are being redirected to dashboard...";
 } else {
     $stmt1 = $link->prepare("INSERT INTO users (discord_id, username, email, hintca) VALUES (?, ?, ?, ?)");
     $stmt1->bind_param("issi", $param_discord_id, $param_username, $param_email, $param_hintca);
@@ -108,7 +102,7 @@ if(mysqli_stmt_num_rows($stmt) != 0){
     if($stmt1->execute()){
         $register = true;
         $logged = false;
-        print_r("Registered");
+        echo "Registered <br> You are being redirected to dashboard...";
         $stmt1->close();
     } else{
         echo "Something went wrong. Please try again.";

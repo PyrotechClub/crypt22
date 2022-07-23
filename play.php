@@ -9,18 +9,23 @@ if (!isset($_SESSION['loggedin'])) {
   
 require_once "config.php";
 
-$result = $link->query("SELECT die_side, levels_solved FROM users WHERE discord_id = $discord_id");
+$result = $link->query("SELECT die_side, levels_solved, sides_solved FROM users WHERE discord_id = $discord_id");
 $result = mysqli_fetch_row($result);
 $dieside = $result[0]??null;
 $levels_solved = $result[1]??null;
-if($dieside != 0 and $levels_solved != 4){
+$levels_no = strlen($levels_solved)/2;
+$sidessolved = $result[2]??null;
+$sidessolved = str_split($sidessolved);
+if($dieside != 0 and  $levels_no % 4 != 0){
     header('location: lvlselect.php');
 }
+$sides_available = array('a', 'b', 'c', 'd', 'e');
+$sides_available = array_diff($sides_available, $sidessolved);
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-    $random_side = rand(1,5);
+    $random_side = array_rand($sides_available) + 1;
 
     $stmt1 = $link->prepare("UPDATE users SET die_side = ? WHERE discord_id = ?");
     $stmt1->bind_param("ii", $random_side, $discord_id);

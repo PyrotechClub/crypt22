@@ -9,12 +9,29 @@ if (!isset($_SESSION['loggedin'])) {
   
 require_once "config.php";
 
-$result = $link->query("SELECT die_side, levels_solved FROM users WHERE discord_id = $discord_id");
+$result = $link->query("SELECT die_side, levels_solved, sides_solved FROM users WHERE discord_id = $discord_id");
 $result = mysqli_fetch_row($result);
 $dieside = $result[0]??null;
 $levels_solved = $result[1]??null;
-if($dieside == 0 and $levels_solved == 4){
+$levels_no = strlen($levels_solved);
+$sidessolved = $result[2]??null;
+
+$alphabet = range('a', 'z');
+
+if($dieside == 0){
     header('location: play.php');
+} else if($levels_no % 4 == 0 and $levels_no > 0){
+    
+    $side = $sidessolved . $alphabet[$dieside - 1];
+
+    $stmt1 = $link->prepare("UPDATE users SET sides_solved = ?, die_side = 0, levels_solved='' WHERE discord_id = ?");
+    $stmt1->bind_param("si", $side, $discord_id);
+    if($stmt1->execute()){
+        header('location: play.php');
+    } else{
+        echo "Something went wrong. Please try again.";
+    }
+    $stmt1->close();
 }
 
 $link->close();
@@ -39,6 +56,9 @@ $link->close();
 </head>
 
 <body>
+    <?php if ($dieside == 1): ?>
+    <link href='css/1.css' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
 
     <div class="mainbod">
 
@@ -85,7 +105,56 @@ $link->close();
                 <div class="col-md-8">
                     <div class="play-content">
                         <h1>Select a level</h1>
-                        
+                        <div class="lvl-menu">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <?php 
+                                        if(str_contains($levels_solved, "a")){
+                                            echo "<a href='lvl1.php' class='solved disabled'>";
+                                        } else{
+                                            echo "<a href='lvl1.php' class='unsolved'>";
+                                        }
+                                    ?>
+                                    <div class="lvl-card"></div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php 
+                                        if(str_contains($levels_solved, "b")){
+                                            echo "<a href='lvl2.php' class='solved disabled'>";
+                                        } else{
+                                            echo "<a href='lvl2.php' class='unsolved'>";
+                                        }
+                                    ?>
+                                    <div class="lvl-card"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <?php 
+                                        if(str_contains($levels_solved, "c")){
+                                            echo "<a href='lvl3.php' class='solved disabled'>";
+                                        } else{
+                                            echo "<a href='lvl3.php' class='unsolved'>";
+                                        }
+                                    ?>
+                                    <div class="lvl-card"></div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php 
+                                        if(str_contains($levels_solved, "d")){
+                                            echo "<a href='lvl4.php' class='solved disabled'>";
+                                        } else{
+                                            echo "<a href='lvl4.php' class='unsolved'>";
+                                        }
+                                    ?>
+                                    <div class="lvl-card"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-2"></div>

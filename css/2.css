@@ -1,0 +1,9 @@
+
+.mainbod {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.mainbod::before {
+    background: url("/crypt22/lib/back-2.jpg") no-repeat center center fixed;
+    background-size: cover;
+}

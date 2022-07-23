@@ -52,7 +52,8 @@ if(isset($_POST['hint'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypt@trix 22.0</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="/crypt22/css/admin.css">
+    <link rel="stylesheet" href="/crypt22/css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +61,7 @@ if(isset($_POST['hint'])) {
     <link
         href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="sharesuspeare.png">
+    <link rel="icon" type="image/x-icon" href="/crypt22/lib/sharesuspeare.png">
 </head>
 
 <body>
@@ -72,7 +73,7 @@ if(isset($_POST['hint'])) {
                 <div class="col-md-1"></div>
                 <div class="col-md-2">
                     <center>
-                        <img src="sharesuspeare.png" class="admin-home-img">
+                        <img src="/crypt22/lib/sharesuspeare.png" class="admin-home-img">
                     </center>
                 </div>
                 <div class="col-md-8">
@@ -110,10 +111,10 @@ if(isset($_POST['hint'])) {
                                         echo "<td scope='row'>" . $row['username'] . "</td>";
                                         echo "<td>" . $row['discord_id'] . "</td>";
                                         echo "<td>" . $row['email'] . "</td>";
-                                        echo "<td>". $row['points'] . "</td>";
-                                        echo "<td>". $row['die_side'] . "</td>";
-                                        echo "<td>". $row['sides_solved'] . "</td>";
-                                        echo "<td>". $converted_res = $row['hintca'] ? 'Yes' : 'No'; "</td>";
+                                        echo "<td>" . $row['points'] . "</td>";
+                                        echo "<td>" . $row['die_side'] . "</td>";
+                                        echo "<td>" . $row['sides_solved'] . "</td>";
+                                        echo "<td>" . $converted_res = $row['hintca'] ? 'Yes' : 'No' . "</td>";
                                     echo "</tr>";
                                 } 
                                 echo "
