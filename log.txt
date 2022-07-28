@@ -173,3 +173,21 @@ Stack trace:
 #0 C:\xampp\htdocs\crypt22\play.php(28): array_rand(Array)
 #1 {main}
   thrown in C:\xampp\htdocs\crypt22\play.php on line 28
+[24-Jul-2022 16:56:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\crypt22\lvl1.php:112
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\lvl1.php(112): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\lvl1.php on line 112
+[24-Jul-2022 17:08:34 Europe/Berlin] PHP Warning:  Undefined variable $sides in C:\xampp\htdocs\crypt22\dashboard.php on line 99
+[24-Jul-2022 18:09:53 Europe/Berlin] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\crypt22\dashboard.php on line 19
+[24-Jul-2022 18:10:42 Europe/Berlin] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\crypt22\dashboard.php on line 19
+[26-Jul-2022 18:10:15 Europe/Berlin] PHP Warning:  Undefined variable $username in C:\xampp\htdocs\crypt22\lvlselect.php on line 188
+[26-Jul-2022 18:10:15 Europe/Berlin] PHP Warning:  Undefined variable $message in C:\xampp\htdocs\crypt22\lvlselect.php on line 192
+[26-Jul-2022 18:10:15 Europe/Berlin] PHP Warning:  Undefined variable $time in C:\xampp\htdocs\crypt22\lvlselect.php on line 195
+[27-Jul-2022 13:32:43 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:135) in C:\xampp\htdocs\crypt22\lvl1.php on line 177
+[27-Jul-2022 13:33:16 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:134) in C:\xampp\htdocs\crypt22\lvl1.php on line 176
+[27-Jul-2022 13:33:32 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:134) in C:\xampp\htdocs\crypt22\lvl1.php on line 176
+[27-Jul-2022 13:35:12 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:134) in C:\xampp\htdocs\crypt22\lvl1.php on line 175
+[27-Jul-2022 13:39:39 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:134) in C:\xampp\htdocs\crypt22\lvl1.php on line 175
+[27-Jul-2022 13:44:17 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:134) in C:\xampp\htdocs\crypt22\lvl1.php on line 175
+[27-Jul-2022 14:13:02 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\crypt22\lvl1.php:135) in C:\xampp\htdocs\crypt22\lvl1.php on line 176

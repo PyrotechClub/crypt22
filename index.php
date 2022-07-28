@@ -9,7 +9,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   
 ?>
 
-<!-- f'r -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,4 +143,4 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 </body>
 
 </html>
-<!-- on'g -->
+<!-- anime frank -->

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none !important;
+    outline: 0 !important;
 }
 
 @font-face {
@@ -760,4 +760,32 @@ a.disabled {
 
 .lvl-menu a{
     width: 90%;
+}
+
+.play-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 75px 50px;
+}
+
+.play-box form {
+    text-align: center;
+    width: 60%;
+}
+
+.play-box input[type=text] {
+    width: 100%;
+    height: 3em;
+    border: 2px solid transparent;
+    border-bottom-color: #BF0B3B;
+    background-color: transparent;
+    padding: 0px 10px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'cabin', sans-serif;
+    letter-spacing: 1px;
 }

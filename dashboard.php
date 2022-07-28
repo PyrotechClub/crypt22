@@ -10,17 +10,13 @@ if (!isset($_SESSION['loggedin'])) {
 require_once "config.php";
 
 //checking if hint card is active
-$result = mysqli_query($link, "SELECT hintca FROM users WHERE discord_id =$discord_id");
+$result = mysqli_query($link, "SELECT hintca, sides_solved, points FROM users WHERE discord_id =$discord_id");
 $result = mysqli_fetch_row($result);
 $hintca = $result[0]??null;
-//getting user sides solved
-$result = mysqli_query($link, "SELECT sides_solved FROM users WHERE discord_id =$discord_id");
-$result = mysqli_fetch_row($result);
-$sides = $result[0]??null;
-//getting user points
-$result = mysqli_query($link, "SELECT points FROM users WHERE discord_id =$discord_id");
-$result = mysqli_fetch_row($result);
-$points = $result[0]??null;
+$sidessolved = $result[1]??null;
+$points = $result[2]??null;
+
+$sides = strlen($sidessolved);
 
 $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=512";
 

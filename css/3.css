@@ -1,0 +1,126 @@
+
+.mainbod {
+    background: #222;
+}
+
+.inbox {
+    background-color: #111;
+    border-radius: 10px;
+}
+
+.inbox-body {
+    padding: 30px 10px 30px 20px;
+}
+
+.inbox-item {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(100, 100, 100, 0.3);
+    margin-top: 4px;
+    width: 100% !important;
+    text-align: left;
+    transition: 0.25s;
+    color: rgb(132, 132, 132) !important;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+a.inbox-item span {
+    color: #fff;
+}
+
+a.inbox-item small {
+    float: right;
+}
+
+a.inbox-item:hover {
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+a.inbox-item.solved {
+    background-color: rgba(100, 100, 100, 0.45);
+}
+
+.inbox-item:last-child {
+    margin-bottom: 4px;
+}
+
+.inbox-top-a {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+b.right {
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.inbox-body span {
+    cursor: pointer;
+}
+
+.lvlno {
+    text-align: left !important;
+    font-size: 1.5em !important;
+}
+
+div.inbox-item {
+    padding: 0px;
+}
+
+.inbox-item-head {
+    padding: 30px 30px 15px 30px;
+}
+
+.inbox-item-body {
+    padding: 15px 30px 25px 30px;
+    background-color: rgba(100, 100, 100, 0.2);
+}
+
+.inbox-item-body small {
+    padding-bottom: 5px;
+}
+
+.inbox input[type=text] {
+    width: 100%;
+    height: 3em;
+    border: none;
+    background-color: transparent;
+    padding: 0px 10px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'cabin', sans-serif;
+    letter-spacing: 1px;
+}
+
+.inbox-left .nav-item {
+    text-align: left !important;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.inbox-left .nav-item.active {
+    background-color: #111;
+    color: #fff;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.col-md-9, .col-md-3 {
+    padding: 0px;
+}
+
+.nav-item i {
+    font-size: 1.3rem;
+}
+
+.inbox-body {
+    text-align: left;
+}
+
+.inbox-left .nav-item a {
+    color: #fff !important;
+    text-decoration: none !important;
+}

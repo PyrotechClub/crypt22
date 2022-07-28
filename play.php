@@ -13,10 +13,12 @@ $result = $link->query("SELECT die_side, levels_solved, sides_solved FROM users 
 $result = mysqli_fetch_row($result);
 $dieside = $result[0]??null;
 $levels_solved = $result[1]??null;
-$levels_no = strlen($levels_solved)/2;
+$levels_no = strlen($levels_solved);
 $sidessolved = $result[2]??null;
 $sidessolved = str_split($sidessolved);
-if($dieside != 0 and  $levels_no % 4 != 0){
+if($dieside != 0){
+    header('location: lvlselect.php');
+} elseif($levels_no % 4 != 0 and $levels_no > 0){
     header('location: lvlselect.php');
 }
 $sides_available = array('a', 'b', 'c', 'd', 'e');
@@ -163,14 +165,7 @@ $link->close();
     </script>
     <script src="https://kit.fontawesome.com/552124b7dc.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script>
-        function roll() {
-            $(".cube-container model-viewer").addClass("roll");
-            setTimeout(function () {
-                $(".dice-form").submit();
-            }, 1500);
-        }
-    </script>
+    <script src="js/play.js"></script>
 
 </body>
 

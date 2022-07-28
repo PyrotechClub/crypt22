@@ -90,7 +90,7 @@ require_once "config.php";
                                     <tbody>
                                         <tr>
                                             <td scope='row'>0</td>
-                                            <td>Pyrotech</td>
+                                            <td>Shewarasussy Cult (Pyrotech)</td>
                                             <td>&infin;</td>
                                         </tr> "; 
                                     $rowNumber = 0;
@@ -152,6 +152,7 @@ require_once "config.php";
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/552124b7dc.js" crossorigin="anonymous"></script>
+    <script src="js/leaderboard.js"></script>
 
 </body>
 
