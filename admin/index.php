@@ -41,6 +41,14 @@ if(isset($_POST['hint'])) {
         $stmt->close();
     }
 }
+if(isset($_POST['log'])) {
+    $input_id = $_POST['discord_id'];
+    if(empty($input_id)) {
+        $error = "<p><span>Please enter a Discord ID</span></p>";
+    } else {
+        header ("Location: log/$input_id.txt");
+    }
+}
 
 
 ?>
@@ -83,6 +91,7 @@ if(isset($_POST['hint'])) {
                             <input type="text" name="discord_id" id="hint-id" placeholder="Discord ID"><br><br>
                             <input type="submit" name ="info" value="Get info" class="btn btn-danger">
                             <input type="submit" name ="hint" value="Remove Hint card" class="btn btn-danger">
+                            <input type="submit" name ="log" value="Download logs file" class="btn btn-danger">
                             <input type="submit" name ="clear" value="Clear" class="btn btn-danger"><br><br>
                             <?php echo $error; ?>
                         </form>

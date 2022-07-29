@@ -14,8 +14,9 @@ $result = mysqli_fetch_row($result);
 $dieside = $result[0]??null;
 $levels_solved = $result[1]??null;
 $levels_no = strlen($levels_solved);
+$file = fopen("admin/log/" . $discord_id .  ".txt", "a");
 
-$error = '';
+$error = "";
 
 if($dieside == 0){
     header('location: play.php');
@@ -30,7 +31,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["answer"])) {
         $error = "<p class='text-danger'>Answer is required</p>";
     } else {
-        $answer = trim(strtolower($_POST["answer"]), ' ');
+        $answer = str_replace(' ', '', strtolower($_POST["answer"]));
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $log = $answer . " ". $time . "\n";
+        fwrite($file, "Side " . $dieside . ", Level 1" . "\n");
+        fwrite($file, $log);
+        fclose($file);
     }
     
     if ($answer == "ipsum" and $dieside == 3) {
@@ -42,6 +49,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
         header('location: lvlselect.php');
     } elseif ($answer == "lorem" and $dieside == 1) {
+        $levels_solved = $levels_solved . "a";
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
+        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        // execute the query
+        $stmt->execute();
+        $stmt->close();
+        header('location: lvlselect.php');
+    } elseif ($answer == "dolor" and $dieside == 2) {
+        $levels_solved = $levels_solved . "a";
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
+        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        // execute the query
+        $stmt->execute();
+        $stmt->close();
+        header('location: lvlselect.php');
+    } elseif ($answer == "dolor" and $dieside == 4) {
+        $levels_solved = $levels_solved . "a";
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
+        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        // execute the query
+        $stmt->execute();
+        $stmt->close();
+        header('location: lvlselect.php');
+    } elseif ($answer == "dolor" and $dieside == 5) {
         $levels_solved = $levels_solved . "a";
         $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
         $stmt -> bind_param("si", $levels_solved, $discord_id);
@@ -78,11 +109,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php if ($dieside == 1): ?>
     <link href='css/1.css' rel='stylesheet' type='text/css'>
     <?php endif; ?>
+    <?php if ($dieside == 2): ?>
+    <link href='css/2.css' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
     <?php if ($dieside == 3): ?>
     <link href='css/3.css' rel='stylesheet' type='text/css'>
     <?php endif; ?>
+    <?php if ($dieside == 4): ?>
+    <link href='css/4.css' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
+    <?php if ($dieside == 5): ?>
+    <link href='css/5.css' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
 
-    <div class="mainbod">
+    <div class="mainbod lvls-page">
 
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
@@ -135,6 +175,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                 <input type="text" class="form-control" id="answer" name="answer"
                                     placeholder="Enter your answer here"><br>
+                                <?php echo $error ?>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                            <?php endif;?>
+                            <?php if($dieside == 2): ?>
+                            <p class="lvltext">lorem ipsum dolor</p>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="text" class="form-control" id="answer" name="answer"
+                                    placeholder="Enter your answer here"><br>
+                                <?php echo $error ?>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                            <?php endif;?>
+                            <?php if($dieside == 4): ?>
+                                <p class="lvltext">lorem ipsum dolor</p>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your answer here"><br>
+                                <?php echo $error ?>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                            <?php endif;?>
+                            <?php if($dieside == 5): ?>
+                                <p class="lvltext">lorem ipsum dolor</p>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your answer here"><br>
                                 <?php echo $error ?>
                                 <button type="submit" class="btn btn-danger">Submit</button>
                             </form>
@@ -244,7 +309,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/552124b7dc.js" crossorigin="anonymous"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 </body>
 

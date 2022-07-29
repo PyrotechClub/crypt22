@@ -1,9 +1,52 @@
 
 .mainbod {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.2);
 }
 
 .mainbod::before {
-    background: url("/crypt22/lib/back-2.jpg") no-repeat center center fixed;
+    background: url("/crypt22/lib/back-2.gif") no-repeat center center fixed;
     background-size: cover;
+}
+
+.lvl-menu .lvl-card {
+    background-color:  rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.25s ease-in-out;
+    transform: translateY(5px);
+}
+
+.lvl-menu .lvl-card:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(0px);
+}
+
+.unsolved .lvl-card {
+    background: url("/crypt22/lib/lvl-locked-2.png") no-repeat center center;
+    background-size: cover;
+}
+
+.solved .lvl-card {
+    background: url("/crypt22/lib/lvl-solved-2.png") no-repeat center center;
+    background-size: cover;
+    filter: grayscale(40%);
+}
+
+.play-box {
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: 0.25s ease-in-out;
+    border-radius: 20px;
+}
+
+.btn-danger {
+    background-color: #6b5985 !important;
+    border-color: #6b5985 !important;
+}
+
+.btn-danger:hover {
+    box-shadow: 0px 3px 10px #6b598591;
+}
+
+.play-box input[type=text] {
+    border-bottom-color: #6b5985 !important;    
 }

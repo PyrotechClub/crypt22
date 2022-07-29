@@ -93,7 +93,7 @@
                                     aria-labelledby="award-heading-One" data-bs-parent="#award-accordion">
                                     <div class="accordion-body">
                                         <ul class="three-ul">
-                                            <li>kucch toh hai</li>
+                                            <li><img class="text-logo" src="lib/gfg-logo.png"> vouchers and <img class="text-logo" src="lib/ngrok-logo.png"> vouchers</li>
                                             In addition to
                                             <li>Free <img class="text-logo" src="lib/xyz-logo.png"> domain</li>
                                             <li><img class="text-logo" src="lib/taskade-logo.png"> lifetime
@@ -115,7 +115,7 @@
                                     aria-labelledby="award-heading-Two" data-bs-parent="#award-accordion">
                                     <div class="accordion-body">
                                         <ul class="three-ul">
-                                            <li>kucch toh hai</li>
+                                            <li><img class="text-logo" src="lib/gfg-logo.png"> vouchers and <img class="text-logo" src="lib/ngrok-logo.png"> vouchers</li>
                                             In addition to
                                             <li>Free <img class="text-logo" src="lib/xyz-logo.png"> domain</li>
                                             <li><img class="text-logo" src="lib/taskade-logo.png"> lifetime
@@ -138,7 +138,7 @@
                                     aria-labelledby="award-heading-Three" data-bs-parent="#award-accordion">
                                     <div class="accordion-body">
                                         <ul class="three-ul">
-                                            <li>kucch toh hai</li>
+                                            <li><img class="text-logo" src="lib/gfg-logo.png"> vouchers and <img class="text-logo" src="lib/ngrok-logo.png"> vouchers</li>
                                             In addition to
                                             <li>Free <img class="text-logo" src="lib/xyz-logo.png"> domain</li>
                                             <li><img class="text-logo" src="lib/taskade-logo.png"> lifetime
@@ -152,14 +152,16 @@
                                 <h2 class="accordion-header" id="award-heading-four">
                                     <button class="accordion-button collapsed award-pos pos-4" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#award-pos-4" aria-expanded="false"
-                                        aria-controls="award-pos-3">
-                                        Top 10
+                                        aria-controls="award-pos-4">
+                                        Top 5
                                     </button>
                                 </h2>
                                 <div id="award-pos-4" class="accordion-collapse collapse"
                                     aria-labelledby="award-heading-four" data-bs-parent="#award-accordion">
                                     <div class="accordion-body">
-                                        <ul>
+                                        <ul class="three-ul">
+                                            <li><img class="text-logo" src="lib/ngrok-logo.png"> vouchers</li>
+                                            In addition to
                                             <li>Free <img class="text-logo" src="lib/xyz-logo.png"> domain</li>
                                             <li><img class="text-logo" src="lib/taskade-logo.png"> lifetime
                                                 membership</li>
@@ -173,11 +175,31 @@
                                     <button class="accordion-button collapsed award-pos pos-5" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#award-pos-5" aria-expanded="false"
                                         aria-controls="award-pos-5">
-                                        All Participants
+                                        Top 10
                                     </button>
                                 </h2>
                                 <div id="award-pos-5" class="accordion-collapse collapse"
                                     aria-labelledby="award-heading-five" data-bs-parent="#award-accordion">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Free <img class="text-logo" src="lib/xyz-logo.png"> domain</li>
+                                            <li><img class="text-logo" src="lib/taskade-logo.png"> lifetime
+                                                membership</li>
+                                            <li>Certificate with rank and name</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="award-heading-six">
+                                    <button class="accordion-button collapsed award-pos pos-6" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#award-pos-6" aria-expanded="false"
+                                        aria-controls="award-pos-6">
+                                        All Participants
+                                    </button>
+                                </h2>
+                                <div id="award-pos-6" class="accordion-collapse collapse"
+                                    aria-labelledby="award-heading-six" data-bs-parent="#award-accordion">
                                     <div class="accordion-body">
                                         <ul>
                                             <li><img class="text-logo" src="lib/taskade-logo.png"> lifetime

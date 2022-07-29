@@ -1,7 +1,7 @@
 // COUNT-DOWN
 
 var myfunc = setInterval(function () {
-    var countDownDate = new Date("Jul 30, 2022 00:00:00").getTime();
+    var countDownDate = new Date("Aug 1, 2022 00:00:00").getTime();
     var now = new Date().getTime();
     var timeleft = countDownDate - now;
     var distance = countDownDate - now;

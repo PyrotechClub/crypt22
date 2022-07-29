@@ -8,6 +8,11 @@
     background-size: cover;
 }
 
+.lvls-page.mainbod::before {
+    background: url("/crypt22/lib/back-1-lvls.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
 .lvl-menu .lvl-card {
     background-color:  rgba(0, 0, 0, 0.6);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -28,6 +33,7 @@
 .solved .lvl-card {
     background: url("/crypt22/lib/lvl-solved.png") no-repeat center center;
     background-size: cover;
+    filter: grayscale(40%);
 }
 
 .play-box {
@@ -35,4 +41,17 @@
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     transition: 0.25s ease-in-out;
     border-radius: 20px;
+}
+
+.btn-danger {
+    background-color: #b8a55b !important;
+    border-color: #b8a55b !important;
+}
+
+.btn-danger:hover {
+    box-shadow: 0px 3px 10px #b8a55b91;
+}
+
+.play-box input[type=text] {
+    border-bottom-color: #b8a55b !important;    
 }

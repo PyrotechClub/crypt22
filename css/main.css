@@ -587,6 +587,11 @@ a.disabled {
     margin: 10px auto;
 }
 
+.three-ul li:nth-child(1) .text-logo {
+    height: 1.8rem;
+    width: auto;
+}
+
 .three-ul li:nth-child(1)::before {
     display: none !important;
 }
