@@ -1,0 +1,1 @@
+<img src="lib/minos.png" alt="minos" height="300px">

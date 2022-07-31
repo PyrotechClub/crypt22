@@ -25,7 +25,7 @@ $payload = [
     'client_id'=>'997424069781757952',
     'client_secret'=>'3ay5q_CXgm1zXc8-oNaXk4PLyB4FkFyL',
     'grant_type'=>'authorization_code',
-    'redirect_uri'=>'http://localhost/crypt22/process-oauth.php',
+    'redirect_uri'=>'https://crypt.teampyro.tech/process-oauth.php',
     'scope'=>'email',
 ];
 
@@ -90,8 +90,10 @@ if(mysqli_stmt_num_rows($stmt) != 0){
     $register = false;
     echo "Logged in <br> You are being redirected to dashboard...";
 } else {
-    $stmt1 = $link->prepare("INSERT INTO users (discord_id, username, email, hintca) VALUES (?, ?, ?, ?)");
-    $stmt1->bind_param("issi", $param_discord_id, $param_username, $param_email, $param_hintca);
+    date_default_timezone_set('Asia/Kolkata');
+    $time = date('Y-m-d H:i:s', time());
+    $stmt1 = $link->prepare("INSERT INTO users (discord_id, username, email, hintca, timest) VALUES (?, ?, ?, ?, ?)");
+    $stmt1->bind_param("issis", $param_discord_id, $param_username, $param_email, $param_hintca, $time);
 
     $param_discord_id = $result['id'];
     $param_username = $result['username'];

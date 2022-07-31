@@ -75,8 +75,6 @@
                                 higher rank.</li>
                             <li><b>Any attemt at breaking the platform will lead to a ban and boot from the event and
                                     discord server.</b></li>
-                            <li>All participants should read the <a href="format.php" target="_blank">format</a> of the
-                                hunt before beginning to get an understanding of the proceedings during the hunt.</li>
                         </ul>
                         <hr class="divider">
                         <h2>Awards</h2>

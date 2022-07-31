@@ -794,3 +794,8 @@ a.disabled {
     font-family: 'cabin', sans-serif;
     letter-spacing: 1px;
 }
+
+.lvltext img {
+    height: 300px;
+    width: auto;
+}

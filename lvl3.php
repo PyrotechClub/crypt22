@@ -22,6 +22,8 @@ if($dieside == 0){
     header('location: play.php');
 } else if($levels_no % 4 == 0 and $levels_no > 0){
     header('location: lvlselect.php');
+} else if($dieside == 6){
+    header('location: play.php');
 } else if(strpos($levels_solved, "c") !== false){
     header('location: lvlselect.php');
 }
@@ -40,42 +42,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         fclose($file);
     }
     
-    if ($answer == "ipsum" and $dieside == 3) {
+    if ($answer == "interstellar" and $dieside == 3) {
         $levels_solved = $levels_solved . "c";
-        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
-        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ?, timest = ? WHERE discord_id = ?");
+        $stmt -> bind_param("ssi", $levels_solved, $time, $discord_id);
         // execute the query
         $stmt->execute();
         $stmt->close();
         header('location: lvlselect.php');
-    } elseif ($answer == "lorem" and $dieside == 1) {
+    } elseif ($answer == "drjekyll" and $dieside == 1) {
         $levels_solved = $levels_solved . "c";
-        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
-        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ?, timest = ? WHERE discord_id = ?");
+        $stmt -> bind_param("ssi", $levels_solved, $time, $discord_id);
         // execute the query
         $stmt->execute();
         $stmt->close();
         header('location: lvlselect.php');
-    } elseif ($answer == "dolor" and $dieside == 2) {
+    } elseif ($answer == "pabloescobar" and $dieside == 2) {
         $levels_solved = $levels_solved . "c";
-        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
-        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ?, timest = ? WHERE discord_id = ?");
+        $stmt -> bind_param("ssi", $levels_solved, $time, $discord_id);
         // execute the query
         $stmt->execute();
         $stmt->close();
         header('location: lvlselect.php');
-    } elseif ($answer == "dolor" and $dieside == 4) {
+    } elseif ($answer == "oscarwilde" and $dieside == 4) {
         $levels_solved = $levels_solved . "c";
-        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
-        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ?, timest = ? WHERE discord_id = ?");
+        $stmt -> bind_param("ssi", $levels_solved, $time, $discord_id);
         // execute the query
         $stmt->execute();
         $stmt->close();
         header('location: lvlselect.php');
-    } elseif ($answer == "dolor" and $dieside == 5) {
+    } elseif ($answer == "99813d" and $dieside == 4) {
+        $error = "<p class='text-danger'>Man is least himself when he talks in his own person. Give him a mask, and he will tell the truth.</p>";
+    } elseif ($answer == "immigrantsong" and $dieside == 5) {
         $levels_solved = $levels_solved . "c";
-        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
-        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ?, timest = ? WHERE discord_id = ?");
+        $stmt -> bind_param("ssi", $levels_solved, $time, $discord_id);
         // execute the query
         $stmt->execute();
         $stmt->close();
@@ -100,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Uchen&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="lib/favicon.png">
 </head>
@@ -116,10 +130,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href='css/3.css' rel='stylesheet' type='text/css'>
     <?php endif; ?>
     <?php if ($dieside == 4): ?>
-    <link href='css/3.css' rel='stylesheet' type='text/css'>
+    <link href='css/4.css' rel='stylesheet' type='text/css'>
     <?php endif; ?>
     <?php if ($dieside == 5): ?>
-    <link href='css/3.css' rel='stylesheet' type='text/css'>
+    <link href='css/5.css' rel='stylesheet' type='text/css'>
     <?php endif; ?>
 
     <div class="mainbod lvls-page">
@@ -166,44 +180,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="play-content">
-                        
-                        <?php if ($dieside != 3): ?>
-                        <div class="play-box">
-                            <h1 class="lvlno">Level 3</h1>
-                            <?php if($dieside == 1): ?>
-                                <p class="lvltext">lorem ipsum dolor</p>
-                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your answer here"><br>
-                                <?php echo $error ?>
-                                <button type="submit" class="btn btn-danger">Submit</button>
-                            </form>
-                            <?php endif;?>
-                            <?php if($dieside == 2): ?>
-                                <p class="lvltext">lorem ipsum dolor</p>
-                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your answer here"><br>
-                                <?php echo $error ?>
-                                <button type="submit" class="btn btn-danger">Submit</button>
-                            </form>
-                            <?php endif;?>
-                            <?php if($dieside == 4): ?>
-                                <p class="lvltext">lorem ipsum dolor</p>
-                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your answer here"><br>
-                                <?php echo $error ?>
-                                <button type="submit" class="btn btn-danger">Submit</button>
-                            </form>
-                            <?php endif;?>
-                            <?php if($dieside == 5): ?>
-                                <p class="lvltext">lorem ipsum dolor</p>
-                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your answer here"><br>
-                                <?php echo $error ?>
-                                <button type="submit" class="btn btn-danger">Submit</button>
-                            </form>
-                            <?php endif;?>
-                        </div>
-                        <?php endif;?>
+
                         <?php if ($dieside == 3): ?>
 
                         <div class="row">
@@ -241,16 +218,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <div class="inbox-item">
                                                 <div class="inbox-item-head">
                                                     <h1 class="lvlno">Level 3</h1>
-                                                    <small><i class='fa-regular fa-star'></i> <b>Crypt@trix</b> &lt;cryptatrix@gmail.com&gt;</small><br><br>
-                                                    <p class="lvltext">lorem ipsum dolor</p>
+                                                    <small><i class='fa-regular fa-star'></i> <b>Crypt@trix</b>
+                                                        &lt;cryptatrix@gmail.com&gt;</small><br><br>
+                                                    <p class="lvltext">Feel like screaming?</p>
+                                                    <!-- BhRCYr5 -->
                                                 </div>
                                                 <div class="inbox-item-body">
                                                     <small>Quick Reply</small><br>
                                                     <small><b>To:</b> &lt;cryptatrix@gmail.com&gt;</small>
                                                     <form method="post"
                                                         action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                                        <input type="text" class="form-control" id="answer" name="answer"
-                                                            placeholder="Enter your answer here"><br>
+                                                        <input type="text" class="form-control" id="answer"
+                                                            name="answer" placeholder="Enter your answer here"><br>
                                                         <?php echo $error ?>
                                                         <button type="submit" class="btn btn-danger">Submit</button>
                                                     </form>
@@ -261,6 +240,69 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <?php elseif ($dieside == 5): ?>
+                        <div class="playlist">
+                            <div class="tab-content">
+                                <div class="playlist-body">
+                                    <span onclick="window.location.replace('play.php')" class="playlist-top-a"><i
+                                            class="fa-solid fa-chevron-left"></i> Back</span>
+                                    <b class="right">3 of 4</b>
+                                    <div class="playlist-item">
+                                        <div class="playlist-item-head">
+                                            <h1 class="lvlno">Level 3</h1>
+                                            <p class="lvltext">nevaeh ot yawriats</p>
+                                        </div>
+                                        <div class="playlist-item-body">
+                                            <form method="post"
+                                                action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                                <input type="text" class="form-control" id="answer" name="answer"
+                                                    placeholder="Enter your answer here"><br>
+                                                <?php echo $error ?>
+                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <b class="right">3 of 4</b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php else: ?>
+                        <div class="play-box">
+                            <h1 class="lvlno">Level 3</h1>
+                            <?php if($dieside == 1): ?>
+                            <p class="lvltext">
+                                <img src="lib/avgn.png" alt="avgn">
+                            </p>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="text" class="form-control" id="answer" name="answer"
+                                    placeholder="Enter your answer here"><br>
+                                <?php echo $error ?>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                            <?php endif;?>
+                            <?php if($dieside == 2): ?>
+                            <p class="lvltext">Money isn't the only thing he burns</p>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="text" class="form-control" id="answer" name="answer"
+                                    placeholder="Enter your answer here"><br>
+                                <?php echo $error ?>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                            <?php endif;?>
+                            <?php if($dieside == 4): ?>
+                            <p class="lvltext">
+                                <img src="lib/time.png" alt="time">
+                            </p>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="text" class="form-control" id="answer" name="answer"
+                                    placeholder="Enter your answer here"><br>
+                                <?php echo $error ?>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                            <?php endif;?>
                         </div>
                         <?php endif;?>
                     </div>
@@ -311,4 +353,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 
-</html> 
+</html>

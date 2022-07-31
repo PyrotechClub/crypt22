@@ -9,16 +9,59 @@ if (!isset($_SESSION['loggedin'])) {
   
 require_once "config.php";
 
-//checking if hint card is active
-$result = mysqli_query($link, "SELECT hintca, sides_solved, points FROM users WHERE discord_id =$discord_id");
+$result = $link->query("SELECT die_side, levels_solved FROM users WHERE discord_id = $discord_id");
 $result = mysqli_fetch_row($result);
-$hintca = $result[0]??null;
-$sidessolved = $result[1]??null;
-$points = $result[2]??null;
+$dieside = $result[0]??null;
+$levels_solved = $result[1]??null;
+$levels_no = strlen($levels_solved);
+$file = fopen("admin/log/" . $discord_id .  ".txt", "a");
 
-$sides = strlen($sidessolved);
+$error = '';
 
-$avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=512";
+if($dieside == 0){
+    header('location: play.php');
+} else if($levels_no % 4 == 0 and $levels_no > 0){
+    header('location: lvlselect.php');
+} else if($dieside != 6){
+    header('location: play.php');
+} else if(strpos($levels_solved, "d") !== false){
+    header('location: lvlselect.php');
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $answer="";
+    if (empty($_POST["answer"])) {
+        $error = "<p class='text-danger'>Answer is required</p>";
+    } else {
+        $answer = str_replace(' ', '', strtolower($_POST["answer"]));
+        date_default_timezone_set('Asia/Kolkata');
+        $time = date('Y-m-d H:i:s', time());
+        $log = $answer . " ". $time . "\n";
+        fwrite($file, "Side " . $dieside . "\n");
+        fwrite($file, $log);
+        fclose($file);
+    }
+    
+    if ($answer == "ipsum" and $dieside == 6) {
+        $levels_solved = $levels_solved . "d";
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
+        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        // execute the query
+        $stmt->execute();
+        $stmt->close();
+        header('location: lvlselect.php');
+    } elseif ($answer == "lorem" and $dieside == 6) {
+        $levels_solved = $levels_solved . "d";
+        $stmt = $link->prepare("UPDATE users SET points = points + 200, levels_solved = ? WHERE discord_id = ?");
+        $stmt -> bind_param("si", $levels_solved, $discord_id);
+        // execute the query
+        $stmt->execute();
+        $stmt->close();
+        header('location: lvlselect.php');
+    } else {
+        $error = "<p class='text-danger'>Wrong answer</p>";
+    }
+} 
 
 ?>
 <!DOCTYPE html>
@@ -35,14 +78,14 @@ $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=5
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Uchen&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="lib/favicon.png">
 </head>
 
 <body>
 
-    <div class="mainbod">
+    <div class="mainbod lvls-page">
 
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
@@ -56,13 +99,13 @@ $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=5
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.php">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="play.php">Play</a>
+                            <a class="nav-link active" href="play.php">Play</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="rules.php">Rules</a>
@@ -81,59 +124,18 @@ $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=5
             </div>
         </nav>
 
-        <div class="container-fluid dashboard-wrapper">
-            <div class="row dashboard-content">
-                <div class="col-md-1"></div>
-                <div class="col-md-6">
-                    <div class="dashboard-box user">
-                        <img src="<?php echo $avatar_url; ?>" class="user-avatar">
-                        <p><span>Username: </span> <?php echo $name; ?></p>
-                        <p><span>Email Id: </span> <?php echo $email; ?></p>
-                        <p><span>Points: </span> <?php echo $points; ?></p>
-                        <?php if($hintca != 0) :?>
-                        <p><span>Inventory: </span> 1x Hint Card</p>
-                        <?php endif ?>
-                        <?php if($hintca == 0) :?>
-                        <p><span>Inventory: </span> --</p>
-                        <?php endif ?>
-                        <p><span>Sides Completed: </span> <?php echo $sides; ?></p>
-                        <a class="btn btn-danger" href="play.php"><i class="fa-solid fa-gamepad"></i> Play</a>
-                        <a class="btn btn-danger" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i>
-                            Logout</a>
+        <div class="container-fluid play-wrapper">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="play-content">
+
+                        <?php if ($dieside == 6): ?>
+
+                        <?php endif;?>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="dashboard-box timer">
-                        <h3>Hunt Ends In</h3>
-                        <hr class="dashboard-hr">
-                        <p>
-                            <span id="days"></span> :
-                            <span id="hours"></span> :
-                            <span id="mins"></span> :
-                            <span id="secs"></span>
-                        </p>
-                    </div>
-                    <div class="dashboard-box shop">
-                        <h3>Stuck? Buy a Hint</h3>
-                        <p>Only costs 100 points</p>
-                        <?php if($hintca != 0) :?>
-                        <a class="btn btn-danger disabled">You already have a Hintcard</a>
-                        <?php endif ?>
-                        <?php if($hintca == 0 and $points >= 100) :?>
-                        <form method="post" action="hint.php">
-                            <button type="button" class="btn btn-danger"
-                                onclick="this.disabled=true;this.value='Submitting...'; this.form.submit();"
-                                type="submit">
-                                Buy a Hint Card
-                            </button>
-                        </form>
-                        <?php endif ?>
-                        <?php if($hintca == 0 and $points < 100) :?>
-                        <a class="btn btn-danger disabled">Insufficient Funds :(</a>
-                        <?php endif ?>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
+                <div class="col-md-2"></div>
             </div>
         </div>
 
@@ -175,10 +177,7 @@ $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=5
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/552124b7dc.js" crossorigin="anonymous"></script>
-    <script src="js/count.js"></script>
-    <script>
-
-    </script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 </body>
 

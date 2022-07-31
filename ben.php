@@ -1,0 +1,1 @@
+<img src="lib/escaperoom.png" alt="escaperoom" height="300px">

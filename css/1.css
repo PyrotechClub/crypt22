@@ -4,12 +4,12 @@
 }
 
 .mainbod::before {
-    background: url("/crypt22/lib/back-1.jpg") no-repeat center center fixed;
+    background: url("/lib/back-1.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
 .lvls-page.mainbod::before {
-    background: url("/crypt22/lib/back-1-lvls.jpg") no-repeat center center fixed;
+    background: url("/lib/back-1-lvls.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -26,12 +26,12 @@
 }
 
 .unsolved .lvl-card {
-    background: url("/crypt22/lib/lvl-locked.png") no-repeat center center;
+    background: url("/lib/lvl-locked.png") no-repeat center center;
     background-size: cover;
 }
 
 .solved .lvl-card {
-    background: url("/crypt22/lib/lvl-solved.png") no-repeat center center;
+    background: url("/lib/lvl-solved.png") no-repeat center center;
     background-size: cover;
     filter: grayscale(40%);
 }

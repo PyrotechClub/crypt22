@@ -1,0 +1,10 @@
+[29-Jul-2022 20:12:22 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in C:\xampp\htdocs\crypt22\play.php:30
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\play.php(30): array_rand(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 30
+[29-Jul-2022 20:18:42 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: array_rand(): Argument #1 ($array) cannot be empty in C:\xampp\htdocs\crypt22\play.php:30
+Stack trace:
+#0 C:\xampp\htdocs\crypt22\play.php(30): array_rand(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\crypt22\play.php on line 30
