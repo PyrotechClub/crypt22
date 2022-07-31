@@ -1,6 +1,7 @@
 # Crypt@trix 22.0
 
-This repository contains the backend as well as the frontend for the web platform used for crypt@ttrix at ordin@trix 22.0
+This repository contains the backend as well as the frontend for the web platform used for Crypt@ttrix at Ordin@trix 22.0.
+For the sql part, import users.sql in phpmyadmin and change the config file as required.
 
 # Pull Request Log
 
