@@ -20,6 +20,8 @@ $alphabet = range('a', 'z');
 
 if($dieside == 0){
     header('location: play.php');
+} else if($dieside == 6){
+    header('location: lvl6.php');
 } else if($levels_no % 4 == 0 and $levels_no > 0){
     
     $side = $sidessolved . $alphabet[$dieside - 1];
@@ -50,7 +52,7 @@ $link->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Uchen&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="lib/favicon.png">
 </head>
@@ -64,6 +66,12 @@ $link->close();
     <?php endif; ?>
     <?php if ($dieside == 3): ?>
     <link href='css/3.css' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
+    <?php if ($dieside == 4): ?>
+    <link href='css/4.css' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
+    <?php if ($dieside == 5): ?>
+    <link href='css/5.css' rel='stylesheet' type='text/css'>
     <?php endif; ?>
 
     <div class="mainbod">
@@ -110,9 +118,281 @@ $link->close();
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="play-content">
-                        <h1>Select a level</h1>
+                        <h1>You rolled a <?php echo $dieside; ?></h1>
                         <div class="lvl-menu">
-                            <?php if ($dieside != 3): ?>
+                            <?php if ($dieside == 3): ?>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="inbox-left">
+                                        <div class="nav">
+                                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                                <li class="nav-item">
+                                                    Compose Mail
+                                                </li>
+                                                <li class="nav-item active">
+                                                <a href="play.php">Inbox (<?php echo 4 - $levels_no; ?>)</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    All Mail
+                                                </li>
+                                                <li class="nav-item">
+                                                    Spam
+                                                </li>
+                                                <li class="nav-item">
+                                                    <i class="fa-solid fa-trash-can"></i> &nbsp;
+                                                    <i class="fa-solid fa-book-bookmark"></i> &nbsp;
+                                                    <i class="fa-solid fa-address-book"></i> &nbsp;
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="inbox">
+                                        <div class="tab-content">
+                                            <div class="tab-pane eventbod fade show active in" id="inboxtab" role="tabpanel"
+                                                aria-labelledby="inboxlink">
+                                                <div class="inbox-body">
+                                                    <span onclick="window.location.reload()" class="inbox-top-a">Refresh</span>
+                                                    <b class="right">1 - 4 of 4</b>
+                                                    <?php 
+                                                        if(strpos($levels_solved, "a") !== false){
+                                                            echo "<a href='lvl1.php' class='solved disabled inbox-item'>
+                                                            <i class='fa-solid fa-star'></i>";
+                                                        } else{
+                                                            echo "<a href='lvl1.php' class='unsolved inbox-item'>
+                                                            <i class='fa-regular fa-star'></i>";
+                                                        }
+                                                    ?>
+                                                    &nbsp;<span>Level 1</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
+                                                    <small>4:20 PM</small>
+                                                    </a>
+                                                    <?php 
+                                                        if(strpos($levels_solved, "b") !== false){
+                                                            echo "<a href='lvl2.php' class='solved disabled inbox-item'>
+                                                            <i class='fa-solid fa-star'></i>";
+                                                        } else{
+                                                            echo "<a href='lvl2.php' class='unsolved inbox-item'>
+                                                            <i class='fa-regular fa-star'></i>";
+                                                        }
+                                                    ?>
+                                                    &nbsp;<span>Level 2</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
+                                                    <small>4:20 PM</small>
+                                                    </a>
+                                                    <?php 
+                                                        if(strpos($levels_solved, "c") !== false){
+                                                            echo "<a href='lvl3.php' class='solved disabled inbox-item'>
+                                                            <i class='fa-solid fa-star'></i>";
+                                                        } else{
+                                                            echo "<a href='lvl3.php' class='unsolved inbox-item'>
+                                                            <i class='fa-regular fa-star'></i>";
+                                                        }
+                                                    ?>
+                                                    &nbsp;<span>Level 3</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
+                                                    <small>4:20 PM</small>
+                                                    </a>
+                                                    <?php 
+                                                        if(strpos($levels_solved, "d") !== false){
+                                                            echo "<a href='lvl4.php' class='solved disabled inbox-item'>
+                                                            <i class='fa-solid fa-star'></i>";
+                                                        } else{
+                                                            echo "<a href='lvl4.php' class='unsolved inbox-item'>
+                                                            <i class='fa-regular fa-star'></i>";
+                                                        }
+                                                    ?>
+                                                    &nbsp;<span>Level 4</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
+                                                    <small>4:20 PM</small>
+                                                    </a>
+                                                    <b class="right">1 - 4 of 4</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php elseif ($dieside == 4): ?>
+                                <div class="page">
+                                    <div class="tab-content">
+                                        <div class="tab-pane eventbod fade show active in" id="pagetab" role="tabpanel"
+                                            aria-labelledby="pagelink">
+                                            <div class="page-body">
+                                                <?php 
+                                                    if(strpos($levels_solved, "a") !== false){
+                                                        echo "<a href='lvl1.php' class='solved disabled page-item'>";
+                                                    } else{
+                                                        echo "<a href='lvl1.php' class='unsolved page-item'>";
+                                                    }
+                                                ?>
+                                                I&nbsp;&nbsp;&nbsp;&nbsp;<span>Level 1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "a") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-check'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-question'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;</small>
+                                                </a>
+                                                <?php 
+                                                    if(strpos($levels_solved, "b") !== false){
+                                                        echo "<a href='lvl2.php' class='solved disabled page-item'>";
+                                                    } else{
+                                                        echo "<a href='lvl2.php' class='unsolved page-item'>";
+                                                    }
+                                                ?>
+                                                II&nbsp;&nbsp;&nbsp;<span>Level 2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "b") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-check'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-question'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;</small>
+                                                </a>
+                                                <?php 
+                                                    if(strpos($levels_solved, "c") !== false){
+                                                        echo "<a href='lvl3.php' class='solved disabled page-item'>";
+                                                    } else{
+                                                        echo "<a href='lvl3.php' class='unsolved page-item'>";
+                                                    }
+                                                ?>
+                                                III&nbsp;&nbsp;<span>Level 3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "c") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-check'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-question'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;</small>
+                                                </a>
+                                                <?php 
+                                                    if(strpos($levels_solved, "d") !== false){
+                                                        echo "<a href='lvl4.php' class='solved disabled page-item'>";
+                                                    } else{
+                                                        echo "<a href='lvl4.php' class='unsolved page-item'>";
+                                                    }
+                                                ?>
+                                                IV&nbsp;&nbsp;<span>Level 4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "d") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-check'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-question'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php elseif ($dieside == 5): ?>
+                                <div class="playlist">
+                                    <div class="tab-content">
+                                        <div class="tab-pane eventbod fade show active in" id="playlisttab" role="tabpanel"
+                                            aria-labelledby="playlistlink">
+                                            <div class="playlist-body">
+                                                <span onclick="window.location.reload()" class="playlist-top-a">Refresh</span>
+                                                <b class="right">1 - 4 of 4</b>
+                                                <?php 
+                                                    if(strpos($levels_solved, "a") !== false){
+                                                        echo "<a href='lvl1.php' class='solved disabled playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    } else{
+                                                        echo "<a href='lvl1.php' class='unsolved playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;<span>Level 1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "a") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-heart'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-regular fa-heart'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;4:20</small>
+                                                </a>
+                                                <?php 
+                                                    if(strpos($levels_solved, "b") !== false){
+                                                        echo "<a href='lvl2.php' class='solved disabled playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    } else{
+                                                        echo "<a href='lvl2.php' class='unsolved playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;<span>Level 2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "b") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-heart'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-regular fa-heart'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;4:20</small>
+                                                </a>
+                                                <?php 
+                                                    if(strpos($levels_solved, "c") !== false){
+                                                        echo "<a href='lvl3.php' class='solved disabled playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    } else{
+                                                        echo "<a href='lvl3.php' class='unsolved playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;<span>Level 3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "c") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-heart'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-regular fa-heart'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;4:20</small>
+                                                </a>
+                                                <?php 
+                                                    if(strpos($levels_solved, "d") !== false){
+                                                        echo "<a href='lvl4.php' class='solved disabled playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    } else{
+                                                        echo "<a href='lvl4.php' class='unsolved playlist-item'>
+                                                        <i class='fa-solid fa-play'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;<span>Level 4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                                                <?php 
+                                                    if(strpos($levels_solved, "d") !== false){
+                                                        echo "<small>
+                                                        <i class='fa-solid fa-heart'></i>";
+                                                    } else{
+                                                        echo "<small>
+                                                        <i class='fa-regular fa-heart'></i>";
+                                                    }
+                                                ?>
+                                                &nbsp;&nbsp;4:20</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php else: ?>
                             <div class="row">
                                 <div class="col-md-6">
                                     <?php 
@@ -159,97 +439,6 @@ $link->close();
                                     ?>
                                     <div class="lvl-card"></div>
                                     </a>
-                                </div>
-                            </div>
-                            <?php endif; ?>
-                            <?php if ($dieside == 3): ?>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="inbox-left">
-                                        <div class="nav">
-                                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                                <li class="nav-item">
-                                                    Compose Mail
-                                                </li>
-                                                <li class="nav-item active">
-                                                <a href="play.php">Inbox (<?php echo 4 - $levels_no; ?>)</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    All Mail
-                                                </li>
-                                                <li class="nav-item">
-                                                    Spam
-                                                </li>
-                                                <li class="nav-item">
-                                                    <i class="fa-solid fa-trash-can"></i> &nbsp;
-                                                    <i class="fa-solid fa-book-bookmark"></i> &nbsp;
-                                                    <i class="fa-solid fa-address-book"></i> &nbsp;
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="inbox">
-                                        <div class="tab-content">
-                                            <div class="tab-pane eventbod fade show active in" id="inboxtab" role="tabpanel"
-                                                aria-labelledby="inboxlink">
-                                                <div class="inbox-body">
-                                                    <span onclick="window.location.reload()" class="inbox-top-a">Refresh</span>
-                                                    <b class="right">1 - 4 of 4</b>
-                                                    <?php 
-                                                        if(strpos($levels_solved, "a") !== false){
-                                                            echo "<a href='lvl1.php' class='solved disabled inbox-item'>
-                                                            <i class='fa-solid fa-star'></i>";
-                                                        } else{
-                                                            echo "<a href='lvl1.php' class='unsolved inbox-item'>
-                                                            <i class='fa-regular fa-star'></i>";
-                                                        }
-                                                    ?>
-                                                    &nbsp;<span>Level 1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
-                                                    <small>4:20 PM</small>
-                                                    </a>
-                                                    <?php 
-                                                        if(strpos($levels_solved, "b") !== false){
-                                                            echo "<a href='lvl2.php' class='solved disabled inbox-item'>
-                                                            <i class='fa-solid fa-star'></i>";
-                                                        } else{
-                                                            echo "<a href='lvl2.php' class='unsolved inbox-item'>
-                                                            <i class='fa-regular fa-star'></i>";
-                                                        }
-                                                    ?>
-                                                    &nbsp;<span>Level 2&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
-                                                    <small>4:20 PM</small>
-                                                    </a>
-                                                    <?php 
-                                                        if(strpos($levels_solved, "c") !== false){
-                                                            echo "<a href='lvl3.php' class='solved disabled inbox-item'>
-                                                            <i class='fa-solid fa-star'></i>";
-                                                        } else{
-                                                            echo "<a href='lvl3.php' class='unsolved inbox-item'>
-                                                            <i class='fa-regular fa-star'></i>";
-                                                        }
-                                                    ?>
-                                                    &nbsp;<span>Level 3&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
-                                                    <small>4:20 PM</small>
-                                                    </a>
-                                                    <?php 
-                                                        if(strpos($levels_solved, "d") !== false){
-                                                            echo "<a href='lvl4.php' class='solved disabled inbox-item'>
-                                                            <i class='fa-solid fa-star'></i>";
-                                                        } else{
-                                                            echo "<a href='lvl4.php' class='unsolved inbox-item'>
-                                                            <i class='fa-regular fa-star'></i>";
-                                                        }
-                                                    ?>
-                                                    &nbsp;<span>Level 4&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;...
-                                                    <small>4:20 PM</small>
-                                                    </a>
-                                                    <b class="right">1 - 4 of 4</b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <?php endif; ?>

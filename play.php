@@ -26,17 +26,30 @@ $sides_available = array_diff($sides_available, $sidessolved);
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-        
-    $random_side = array_rand($sides_available) + 1;
 
-    $stmt1 = $link->prepare("UPDATE users SET die_side = ? WHERE discord_id = ?");
-    $stmt1->bind_param("ii", $random_side, $discord_id);
-    if($stmt1->execute()){
-        header('location: lvlselect.php');
-    } else{
-        echo "Something went wrong. Please try again.";
+    if (empty($sides_available)) {
+        $side_6 = 6;
+        $stmt1 = $link->prepare("UPDATE users SET die_side = ? WHERE discord_id = ?");
+        $stmt1->bind_param("ii", $side_6, $discord_id);
+        if($stmt1->execute()){
+            header('location: lvl6.php');
+        } else{
+            echo "Something went wrong. Please try again.";
+        }
+        $stmt1->close();
+    } else {
+        
+        $random_side = array_rand($sides_available) + 1;
+
+        $stmt1 = $link->prepare("UPDATE users SET die_side = ? WHERE discord_id = ?");
+        $stmt1->bind_param("ii", $random_side, $discord_id);
+        if($stmt1->execute()){
+            header('location: lvlselect.php');
+        } else{
+            echo "Something went wrong. Please try again.";
+        }
+        $stmt1->close();
     }
-    $stmt1->close();
 }
 
 $link->close();
