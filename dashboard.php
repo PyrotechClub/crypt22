@@ -104,7 +104,7 @@ $avatar_url = "https://cdn.discordapp.com/avatars/$discord_id/$avatar.jpg?size=5
                 </div>
                 <div class="col-md-4">
                     <div class="dashboard-box timer">
-                        <h3>Hunt Starts In</h3>
+                        <h3>Hunt Ends In</h3>
                         <hr class="dashboard-hr">
                         <p>
                             <span id="days"></span> :

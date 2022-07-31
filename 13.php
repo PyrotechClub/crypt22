@@ -1,0 +1,1 @@
+<?php header("location: lib/13.jpg"); ?>

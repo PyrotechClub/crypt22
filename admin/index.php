@@ -3,9 +3,9 @@
 session_start();
   
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'crypt22');
+define('DB_USERNAME', 'u574663510_root');
+define('DB_PASSWORD', 'UrMotherG4e');
+define('DB_NAME', 'u574663510_crypt22');
  
 /* Attempt to connect to MySQL database */
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -60,8 +60,8 @@ if(isset($_POST['log'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypt@trix 22.0</title>
-    <link rel="stylesheet" href="/crypt22/css/admin.css">
-    <link rel="stylesheet" href="/crypt22/css/main.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +69,7 @@ if(isset($_POST['log'])) {
     <link
         href="https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Open+Sans&family=Poiret+One&family=Poppins&family=Raleway&family=Roboto&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/crypt22/lib/sharesuspeare.png">
+    <link rel="icon" type="image/x-icon" href="/lib/sharesuspeare.png">
 </head>
 
 <body>
@@ -81,7 +81,7 @@ if(isset($_POST['log'])) {
                 <div class="col-md-1"></div>
                 <div class="col-md-2">
                     <center>
-                        <img src="/crypt22/lib/sharesuspeare.png" class="admin-home-img">
+                        <img src="/lib/sharesuspeare.png" class="admin-home-img">
                     </center>
                 </div>
                 <div class="col-md-8">
