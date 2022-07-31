@@ -3,9 +3,9 @@
 session_start();
   
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'u574663510_root');
-define('DB_PASSWORD', 'UrMotherG4e');
-define('DB_NAME', 'u574663510_crypt22');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'crypt22');
  
 /* Attempt to connect to MySQL database */
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
